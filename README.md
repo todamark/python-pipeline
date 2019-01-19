@@ -43,3 +43,7 @@ pipe_cleaner = Pipeline().split(is_valid, clean, lambda data: print(f"Invalid da
 
 pipe_cleaner.pipe(decorate).pipe(notify).apply(data_from_somewhere)
 ```
+
+## Test
+
+`python -m unittest discover  -p "*_test.py"`
