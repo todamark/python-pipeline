@@ -8,9 +8,9 @@ Avoid repeating code on long data pipelines by creating the flow once and reusin
 
 #### `split` - Add a conditional step in the pipeline
 ###### arguments:
-* `check (data) => boolean` The conditional to check
-* `fn_if_true (data) => data` The pipeline step if check returns true
-* `fn_if_fales (data) => data` The pipeline step if check returns false
+* `check: (data) => boolean` The conditional to check
+* `fn_if_true: (data) => data` The pipeline step if check returns true
+* `fn_if_false: (data) => data` The pipeline step if check returns false
 
 #### `apply` - Apply the pipeline to some data
 ###### arguments:
@@ -37,7 +37,7 @@ def decorate(number):
     return f"The number of the day is {number} for some reason"
     
 def notify(notification):
-    requests.post("https://my-server.com/numberofday", data = { "message": notification})
+    requests.post("https://my-server.com/numberofday", data = { "message": notification })
 
 pipe_cleaner = Pipeline().split(is_valid, clean, lambda data: print(f"Invalid data received: {data}"))
 
